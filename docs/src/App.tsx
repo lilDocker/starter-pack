@@ -13,15 +13,13 @@ const App = () => {
   return (
     <div className=" sans min-h-screen bg-white text-slate-950 font-sans antialiased">
       {/* --- TOP NAVIGATION BAR --- */}
-      <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+      <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
         <div className="container mx-auto flex h-14 items-center justify-between px-8">
           <div className="mr-4 flex items-center gap-8">
             {/* Logo */}
             <a href="/" className="flex items-center space-x-2 font-bold">
-              <div className="h-6 w-6 bg-slate-900 rounded-sm flex items-center justify-center">
-                 <div className="h-3 w-3 bg-white rotate-45" />
-              </div>
-              <span className="inline-block">shadcn/ui</span>
+            <img src="/log/lilDockerr.png" className='w-10'></img>
+              <span className="inline-block">lilDocker</span>
             </a>
             <nav className="flex items-center space-x-6 text-sm font-medium text-slate-600">
               {['Docs', 'Components', 'Blocks', 'Charts', 'Directory', 'Create'].map((link) => (
@@ -38,9 +36,7 @@ const App = () => {
                 placeholder="Search documentation..." 
                 className="h-9 w-full rounded-md border border-slate-200 bg-slate-50 pl-8 pr-4 text-sm focus:outline-none focus:ring-1 focus:ring-slate-400"
               />
-              <kbd className="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none items-center gap-1 rounded border bg-white px-1.5 font-mono text-[10px] font-medium text-slate-400 opacity-100 sm:flex">
-                <span className="text-xs">⌘</span>K
-              </kbd>
+             
             </div>
             <div className="flex items-center gap-2 border-l pl-4 border-slate-200">
                <div className="flex items-center gap-1 text-sm font-medium">
@@ -56,7 +52,7 @@ const App = () => {
 
       <div className="container mx-auto flex px-8">
         {/* --- LEFT SIDEBAR --- */}
-        <aside className="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 overflow-y-auto border-r md:sticky md:block md:w-64 py-8 pr-6">
+        <aside className="fixed top-14 z-30 -ml-2 hidden h-[calc(100vh-3.5rem)] w-full shrink-0 overflow-y-auto md:sticky md:block md:w-64 py-8 pr-6">
           <div className="space-y-6">
             <div>
               <h4 className="mb-2 px-2 text-sm font-semibold tracking-tight text-slate-900">Sections</h4>

@@ -1,9 +1,9 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family:Sans;
+  font-family: Sans;
   src: url(/public/fonts/1b99372b3eaef0c8-s.p.758e15a8.woff2);
 }
 .sans{
-  font-family:Sans,sans-serif;
+  font-family: Sans,sans-serif;
 }
