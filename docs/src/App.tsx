@@ -1,7 +1,13 @@
-import { useState } from 'react';
-import { 
-  Search, Github, Plus, Copy, ChevronLeft, ChevronRight, LayoutGrid 
-} from 'lucide-react';
+import { useState } from "react";
+import {
+  Search,
+  Github,
+  Plus,
+  Copy,
+  ChevronLeft,
+  ChevronRight,
+  LayoutGrid,
+} from "lucide-react";
 
 type NavItem =
   | 'Introduction'
