@@ -1,0 +1,59 @@
+# lilDockfile - custom container build file for lildocker
+# Syntax: INSTRUCTION arguments
+# Lines starting with # are comments
+# Backslash \ continues the line
+
+# ─── Base Image ───────────────────────────────────────────────────────────────
+# FROM sets the base image. Must be the first instruction.
+# Available bases: any image already imported into lildocker's store.
+FROM alpine:latest
+
+# ─── Build Arguments ──────────────────────────────────────────────────────────
+# ARG defines a build-time variable. Override with: lildocker build --build-arg KEY=val
+ARG APP_VERSION=1.0.0
+
+# ─── Labels ───────────────────────────────────────────────────────────────────
+LABEL maintainer=you@example.com
+LABEL version=${APP_VERSION}
+LABEL description=My awesome Go app
+
+# ─── Environment Variables ────────────────────────────────────────────────────
+# ENV variables are baked into the image and available at runtime
+ENV APP_PORT=8080
+ENV APP_ENV=production
+ENV LOG_LEVEL=info
+
+# ─── Working Directory ────────────────────────────────────────────────────────
+# Creates the directory if it doesn't exist
+WORKDIR /app
+
+# ─── Install Dependencies ─────────────────────────────────────────────────────
+# RUN executes a shell command during the build and creates a new layer
+RUN apk add --no-cache \
+    ca-certificates \
+    tzdata
+
+# ─── Copy Files ───────────────────────────────────────────────────────────────
+# COPY <src-in-build-context> <dst-in-image>
+COPY myapp /app/myapp
+COPY config.yaml /app/config.yaml
+
+# ─── File Permissions ─────────────────────────────────────────────────────────
+RUN chmod +x /app/myapp
+
+# ─── Exposed Ports ────────────────────────────────────────────────────────────
+# EXPOSE documents which port(s) the app listens on
+EXPOSE 8080/tcp
+
+# ─── Volume Mount Points ──────────────────────────────────────────────────────
+# VOLUME declares a path that should be externally mounted
+VOLUME /app/data
+VOLUME /app/logs
+
+# ─── Runtime User ─────────────────────────────────────────────────────────────
+USER nobody
+
+# ─── Default Command ──────────────────────────────────────────────────────────
+# CMD sets the default command when the container starts.
+# JSON array form is preferred (no shell, exact exec)
+CMD ["/app/myapp", "--port", "8080", "--env", "production"]
