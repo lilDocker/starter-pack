@@ -1,3 +1,3 @@
-module github.com/you/lildocker
+module lildocker
 
-go 1.21
+go 1.25.4

@@ -1,0 +1,59 @@
+# ---------------------------
+# Go build files
+# ---------------------------
+bin/
+build/
+dist/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go test
+*.test
+*.out
+coverage.out
+
+# ---------------------------
+# Go module cache (optional)
+# ---------------------------
+vendor/
+
+# ---------------------------
+# Generated container data (IMPORTANT)
+# ---------------------------
+images/
+containers/
+registry/
+temp/
+
+# ---------------------------
+# Logs
+# ---------------------------
+*.log
+
+# ---------------------------
+# OS files
+# ---------------------------
+.DS_Store
+Thumbs.db
+
+# ---------------------------
+# Editor / IDE
+# ---------------------------
+.vscode/
+.idea/
+*.swp
+
+# ---------------------------
+# Environment files
+# ---------------------------
+.env
+.env.local
+
+# ---------------------------
+# Node test apps (optional)
+# If you keep sample projects inside repo
+# ---------------------------
+sample-node/node_modules/
